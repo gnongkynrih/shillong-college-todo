@@ -1,3 +1,9 @@
+XAMPP
+composer -->getcomposer.org
+nodejs --> https://nodejs.org/en/download/
+Workbench/Dbeaver --> IDE for database
+vscode --> IDE for coding
+
 composer config -g github-oauth.github.com your-token
 
 if you are downloading from github. after download run the command
