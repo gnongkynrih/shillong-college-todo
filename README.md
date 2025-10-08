@@ -1,7 +1,7 @@
 XAMPP
 composer -->getcomposer.org
 nodejs --> https://nodejs.org/en/download/
-Workbench/Dbeaver --> IDE for database
+Workbench/Dbeaver/phpmyadmin --> IDE for database
 vscode --> IDE for coding
 
 composer config -g github-oauth.github.com your-token
@@ -28,17 +28,35 @@ Laravel - -PHP Framework
 CSS --> tailwindCSS is a CSS framework
 JS --> AlpineJS
 
-nielit2.1 5G
-password: nielit364#
+.env file -- is the place where we store configuration
+eg, database name, username, password
+sample...
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=todo
+DB_USERNAME=root
+DB_PASSWORD=password of the username
 
-TO create a new project
-composer create-project larave/laravel projectName
+TO create a new project run the command
+1.composer create-project larave/laravel projectName
 After creating the project we run the command from within the project folder
-npm install --> install all the packages/modules
-npm run dev
+2.npm install --> install all the packages/modules
+3.npm run dev
 
 TO run a server
-php artisan serve
+4.php artisan serve
+
+//TO USE LIVEWIRE install livewire
+composer require livewire/livewire
+
+intall tailwindcss
+npm install tailwindcss @tailwindcss/vite
+npm install @tailwindcss/forms --save-dev
+npm run dev
+
+TO CREATE LIVEWIRE COMPONENT
+php artisan make:livewire componentname
 
 MVC --> Model View Controller
 View --> is what we see
@@ -46,17 +64,9 @@ view is inside resources folder
 
 model --> table
 model is inside app/Models folder
-
+in laravel field id by default is primary key and auto increment
 controller --> interaction between model and view
 controller is inside app/Http/Controllers folder
-
-install livewire
-composer require livewire/livewire
-
-intall tailwindcss
-npm install tailwindcss @tailwindcss/vite
-npm install @tailwindcss/forms --save-dev
-npm run dev
 
 In our layout file add this line inside html->head
 @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -85,9 +95,9 @@ php artisan migrate
 
 TO MAKE A MODEL WITH MIGRATION
 php artisan make:model ModelName -m
-(model name is singular)
+(model name is singular and starts with capital)
 
-TO CREATE A MIGRATION FILE
+TO CREATE A MIGRATION FILE (in case we need to update the table)
 php artisan make:migration add_column_name_to_table_name --table=table_name
 eg php artisan make:migration add_date_of_completion_to_tasks_table --table=tasks
 eg. php artisan make:migration add_column_user_id_to_table_tasks --table=tasks
