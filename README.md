@@ -1,8 +1,19 @@
+https://github.com/gnongkynrih/shillong-college-todo
+
 XAMPP
 composer -->getcomposer.org
 nodejs --> https://nodejs.org/en/download/
 Workbench/Dbeaver/phpmyadmin --> IDE for database
 vscode --> IDE for coding
+
+FOR CSS FRAMEWORK WE WILL USE
+TAILWINDCSS AND
+FLOWBITE
+https://flowbite.com/docs/getting-started/laravel/
+install flowbite--> npm install flowbite --save
+in app.blade.php file add this line in the head
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
 composer config -g github-oauth.github.com your-token
 
