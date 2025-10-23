@@ -112,7 +112,7 @@ TO CREATE A MIGRATION FILE (in case we need to update the table)
 php artisan make:migration add_column_name_to_table_name --table=table_name
 eg php artisan make:migration add_date_of_completion_to_tasks_table --table=tasks
 eg. php artisan make:migration add_column_user_id_to_table_tasks --table=tasks
-USING CHARTJS
+WE WILL USE CHARTJS FOR GRAPHS AND CHARTS
 chartjs.org
 Installation:
 npm install chart.js
@@ -133,7 +133,6 @@ php artisan make:view send-forgot-password-email
 https://github.com/mailhog/MailHog
 after installing run the mailhog server using the command
 mailhog
-
 //in .env file add the following
 MAIL_MAILER=smtp
 MAIL_HOST=localhost
@@ -146,3 +145,30 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 //TO CHECK YOUR EMAIL
 http://localhost:8025
+
+USER AUTHENTICATION AND AUTHORIZATION
+https://spatie.be/docs/laravel-permission/v6/installation-laravel
+
+install laravel-permission
+composer require spatie/laravel-permission
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+php artisan migrate
+
+Add the necessary trait to your User model:
+App\Models\User.php
+use Spatie\Permission\Traits\HasRoles;
+Add the trait to the User model:
+class User extends Authenticatable
+{
+use HasRoles;
+
+}
+
+CREATE SEEDER
+php artisan make:seeder RoleSeeder
+
+To run/execute the seeder
+php artisan db:seed --class=RoleSeeder
+
+//To create user seeder
+php artisan make:seeder UserSeeder

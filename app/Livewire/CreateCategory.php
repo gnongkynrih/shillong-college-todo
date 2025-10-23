@@ -45,6 +45,8 @@ class CreateCategory extends Component
         }
         //clear the input
         $this->reset(['name']);
+        session()->put('success-message', 'Category saved successfully');
+        return redirect()->route('category');
     }
     
     public function editCategory($id){
@@ -65,12 +67,14 @@ class CreateCategory extends Component
         //     $cat->is_active = true;
         // }
         $cat->save();
+        session()->put('success-message', 'Category status updated successfully');
+        return redirect()->route('category');
     }
     public function render()
     {
         //select * from category table
         // $cat = Category::get();
-         $cat = Category::paginate(2); //get 2 records at a time
+         $cat = Category::paginate(5); //get 2 records at a time
         return view('livewire.create-category')
             ->with([
                 'categories' => $cat
